@@ -1,0 +1,25 @@
+<h2>{{student.first_name}} {{student.last_name}}'s profile</h2>
+<div style="display:flex;width:100%;justify-content:space-around;">
+    <div>
+        <h3>student's image</h3>
+        <img src="" alt="">
+        <div>
+            
+        </div>
+    </div>
+    <div>
+        <h3>student's details</h3>
+        <h2><strong>Full Name: </strong>{{student.first_name}} {{student.last_name}}</h2>
+        <h2><strong>Gender: </strong>{{student.gender}} </h2>
+        <h2><strong>Category: </strong>{{student.category}} </h2>
+        <h2><strong>Phone Number: </strong>{{student.phone_number}} </h2>
+        <h2><strong>Email: </strong>{{student.email}} </h2>
+        {{#each student.address}}
+        <h2><strong>Address: </strong>{{street_name}} </h2>
+        <h2><strong>City/State: </strong>{{city}} {{state}}</h2>
+        {{/each}}
+    </div>
+    <div>
+        <a href="/students/{{student._id}}/classes" class="button1">My Courses</a>
+    </div>
+</div>

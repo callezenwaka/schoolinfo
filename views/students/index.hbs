@@ -1,0 +1,31 @@
+<h2 style="text-align:center">Current Students</h2>
+
+{{!-- <a href="/students/addStudent">Add Student</a> --}}
+<table style="font-family: arial, sans-serif;border-collapse: collapse;width: 100%;">
+        <thead>
+            <tr>
+                <th style="">Full Name</th>
+                
+                <th >Gender</th>
+                {{!-- <th >Email</th> --}}
+                <th >Category</th>
+                <th >Actions</th>
+            </tr>
+        </thead>
+    {{#each students}}
+            <tbody>
+                <tr>
+                    <td><a href="/students/{{_id}}/details">{{ first_name }}  {{ last_name }}</a></td>
+                    
+                    <td>{{ gender }}</td>
+                    {{!-- <td>{{ email }}</td> --}}
+                    <td>{{ category }}</td>
+                    <td>
+                        <a href="/students/{{_id}}/details" class="button1">Details</a>
+                        <a href="/students/edit/{{_id}}" class="button1">Edit</a>
+                        <a href="/students/delete/{{_id}}" class="button1">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+    {{/each}}
+</table>

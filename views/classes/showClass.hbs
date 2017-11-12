@@ -1,0 +1,13 @@
+<h1>{{className.title}}'s details</h1>
+
+<div style="text-align: center">
+    <h3 style="border-bottom:2px solid #ccc;">Class</h3><br>
+    <p>{{ className.description }}</p>
+    <form id="classRegForm" method="post" action="/students/classes/register">
+        <input type="hidden" name="student_id" value="student._id">
+        <input type="hidden" name="class_id" value="class._id">
+        <input type="hidden" name="class_title" value="class.title">
+        <button type="submit" name="submit">Register For This Course</button>
+    </form>
+    <h3><strong>Instructor: </strong>{{className.instructor}}</h3>
+</div>

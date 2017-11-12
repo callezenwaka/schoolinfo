@@ -1,0 +1,14 @@
+<h1>Edit Here</h1>
+
+<br>
+
+<form action="/categories/edit/{{category._id}}" method="post">
+    <div>
+        <label for="categpry" style="display:inline-block; width:200px;">Category:</label>
+        <input type="text" name="title" class="form" id="title" value="{{ category.title }}">
+    </div><br>
+    <div>
+        <button type="submit" name="submit" class="button1">Submit</button>
+    </div>
+    
+</form>

@@ -1,0 +1,43 @@
+<h2 style="text-align:center">Current Categories</h2>
+
+{{!-- <a href="/categories/addCategory">Add Category</a> --}}
+<table style="font-family: arial, sans-serif;border-collapse: collapse;width: 100%;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">Category Id</th>
+                <th style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">Title</th>
+                <th style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">Description</th>
+                <th style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">Actions</th>
+            </tr>
+        </thead>
+    {{#each categories}}
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">{{ _id }}</td> 
+                    <td style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">{{ title }}</td>
+                    <td style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">{{ description }}</td>
+                    <td style="border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;">
+                        <a href="/categories/{{_id}}/details" class="button1">Details</a>
+                        <a href="/categories/edit/{{_id}}" class="button1">Edit</a>
+                        <a href="/categories/delete/{{_id}}" class="button1">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+    {{/each}}
+</table>

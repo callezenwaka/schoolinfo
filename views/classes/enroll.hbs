@@ -1,0 +1,7 @@
+<h1>Available Course</h1>
+{{#each classes}}
+<h2>{{ title }}</h2>
+<h2>{{ description }}</h2>
+<h2><strong>Instructor: </strong>{{ instructor }}</h2>
+<a href="/classes/{{_id}}/details">Details</a>
+{{/each}}

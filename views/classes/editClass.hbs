@@ -1,0 +1,22 @@
+<h1>Edit Here</h1>
+
+<br>
+
+<form action="/classes/edit/{{className._id}}" method="post">
+    <div>
+        <label for="class" style="display:inline-block; width:200px;">Class:</label>
+        <input type="text" name="title" class="form" id="title" value="{{ className.title }}">
+    </div><br>
+    <div>
+        <label for="description" style="display:inline-block; width:200px;">Description:</label>
+        <textarea name="description" class="form" id="description">{{className.description}}</textarea>
+    </div><br>
+    <div>
+        <label for="instructor" style="display:inline-block; width:200px;">Class:</label>
+        <input type="text" name="instructor" class="form" id="instructor" value="{{className.instructor}}">
+    </div><br>
+    <div>
+        <button type="submit" name="submit" class="button1">Submit</button>
+    </div>
+    
+</form>
