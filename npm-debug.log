@@ -1,6 +1,6 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start' ]
-2 info using npm@3.5.2
+2 info using npm@6.0.1
 3 info using node@v4.2.6
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle schoolinfo@0.0.0~prestart: schoolinfo@0.0.0

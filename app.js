@@ -9,12 +9,8 @@ var hbs = require('express-handlebars');
 var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var expressMessages = require('express-messages');
-var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
-mongoose.connect('mongodb://127.0.0.1/schoolinfo', {
-    useMongoClient: true
-});
 
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
