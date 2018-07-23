@@ -10,6 +10,7 @@ var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var expressMessages = require('express-messages');
 var mongoose = require('mongoose');
+var mongo = require('mongodb');
 var flash = require('connect-flash');
 
 // assign mongoose promise library and connect to database
