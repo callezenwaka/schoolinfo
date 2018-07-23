@@ -28,6 +28,7 @@ router.get('/:id/classes', function(req, res, next) {
         if (err) {
             console.log(err);
         } else {
+            var student_id = [req.params.id];
             Class.getClasses(function(err, classes) {
                 if (err) {
                     console.log(err);
@@ -35,6 +36,7 @@ router.get('/:id/classes', function(req, res, next) {
                     res.render('students/classes', {
                         "student": student,
                         "classes": classes,
+                        "student_id": student_id,
                         title: 'Student Classes'
                     });
                 }
@@ -63,16 +65,17 @@ router.post('/classes/register', function(req, res) {
     var class_id = req.body.class_id;
     var class_title = req.body.class_title;
 
-    Student.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.session.student_id) }, { "$set": { "classes": { "class_id": class_id, "class_title": class_title } } }, { upsert: true }, function(err, student) {
+    Student.findOneAndUpdate(student_id, { "$set": { "classes": { "class_id": class_id, "class_title": class_title } } }, { upsert: true }, function(err, student) {
         if (err) {
             console.log(err);
         } else {
+            console.log(student);
             res.send(student);
         }
-
+        //res.redirect('/students');
     });
-    //console.log(student_id);
-    res.redirect('/students');
+    // res.redirect('/students');
+
 });
 
 /* GET register page. */

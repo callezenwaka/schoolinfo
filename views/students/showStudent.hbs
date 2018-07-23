@@ -2,7 +2,7 @@
 <div style="display:flex;width:100%;justify-content:space-around;">
     <div>
         <h3>student's image</h3>
-        <img src="" alt="">
+        <img src="/images/love6.jpg" alt="">
         <div>
             
         </div>
@@ -12,7 +12,7 @@
         <h2><strong>Full Name: </strong>{{student.first_name}} {{student.last_name}}</h2>
         <h2><strong>Gender: </strong>{{student.gender}} </h2>
         <h2><strong>Category: </strong>{{student.category}} </h2>
-        <h2><strong>Phone Number: </strong>{{student.phone_number}} </h2>
+        <h2><strong>Phone Number: </strong><a href="#">{{student.phone_number}}</a></h2>
         <h2><strong>Email: </strong>{{student.email}} </h2>
         {{#each student.address}}
         <h2><strong>Address: </strong>{{street_name}} </h2>

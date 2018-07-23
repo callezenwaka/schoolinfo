@@ -4,8 +4,12 @@
 
 <form action="/categories/edit/{{category._id}}" method="post">
     <div>
-        <label for="categpry" style="display:inline-block; width:200px;">Category:</label>
+        <label for="title" style="display:inline-block; width:200px;">Category:</label>
         <input type="text" name="title" class="form" id="title" value="{{ category.title }}">
+    </div><br>
+     <div>
+        <label for="descritpion" style="display:inline-block; width:200px;">Category:</label>
+        <input type="text" name="descritpion" class="form" id="descritpion" value="{{ category.descritpion }}">
     </div><br>
     <div>
         <button type="submit" name="submit" class="button1">Submit</button>

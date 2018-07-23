@@ -38,6 +38,12 @@ li {
     padding: 8px;
 }
 
+.background {
+    background-color: rgba(51, 51, 51, 0.08);
+    padding: 10px;
+    margin: 10px;
+}
+
 .form {
     padding: 8px;
     margin: 8px 16px;
@@ -113,14 +119,20 @@ section .sidebar {
     align-items: center;
     width: 100%;
     position: fixed;
-    background-color: #ccc;
+    background-color: #ee6e73;
+}
+
+.smMenubar1 {
+    background-color: #ee6e73;
 }
 
 .smScreen .smMenubar .logo {
     margin-right: auto;
 }
 
-.smScreen .smMenubar .icon img {}
+.smScreen .smMenubar .icon img {
+    /* margin: 10px; */
+}
 
 .smScreen .smMenubar form
 /*.search*/
@@ -306,7 +318,7 @@ section .sidebar {
     grid-gap: 10px;
     padding: 10px;
     color: #fff;
-    background: #1a0000;
+    background: #ee6e73;
     grid-template-areas: "editorials" "report";
 }
 
@@ -317,7 +329,7 @@ section .sidebar {
     grid-gap: 10px;
     padding: 10px;
     color: #fff;
-    background: #1a0000;
+    background: #ee6e73;
     grid-template-areas: "notes" "organizers" "map";
 }
 
@@ -333,7 +345,7 @@ section .sidebar {
 .footer {
     grid-area: footer;
     padding: 10px;
-    background: #ccc;
+    background: #ee6e73;
     flex: 0 0 90px;
     text-align: center;
 }

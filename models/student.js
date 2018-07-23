@@ -39,7 +39,7 @@ module.exports.getStudentByIdAndRemove = function(id, callback) {
 };
 
 module.exports.register = function(info, callback) {
-    student_id = info['student_id'];
+    var student_id = info['student_id'];
     class_id = info['class_id'];
     class_title = info['class_title'];
 
@@ -48,7 +48,7 @@ module.exports.register = function(info, callback) {
     Student.findOneAndUpdate(query, { $push: { classes: { class_id: class_id, class_title: class_title } } }, { upsert: true },
         callback
     );
-}
+};
 
 //Save student
 // module.exports.saveStudent = function(newStudent, callback) {

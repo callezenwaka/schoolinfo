@@ -132,7 +132,7 @@ router.post('/edit/:id', function(req, res, next) {
         });
     } else {
 
-        var query = { _id: req.params.id }
+        var query = { _id: req.params.id };
 
         Class.update(query, updatedClass, function(err) {
             if (err) {

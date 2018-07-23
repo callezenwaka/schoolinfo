@@ -1,14 +1,28 @@
 <h2>{{student.first_name}}'s Classes</h2><hr>
 
 
-{{#each student.classes}}
-<h2>{{ class_title }}</h2>
-<a href="/classes/{{class_id}}/details">Details</a><hr>
-{{/each}}
-<a href="/classes/enroll">Enroll in a Class</a>
-{{#each classes}}
-<h2>{{ title }}</h2>
-<h2>{{ description }}</h2>
-<h2><strong>Instructor: </strong>{{ instructor }}</h2>
-<a href="/classes/{{_id}}/details">Details</a><hr>
-{{/each}}
+<div style="display: flex;justify-content:space-between">
+    <div>
+        <h2>Currently registered Courses</h2>
+        {{#each student.classes}}
+        <h2>{{ class_title }}</h2>
+        <a href="/classes/{{class_id}}/details">Details</a><hr>
+        {{/each}}
+    </div>
+
+    <div>
+        <a href="//classes/enroll">Enroll in a Class</a>
+        {{#each classes}}
+        <h2>{{ title }}</h2>
+        <h2>{{ description }}</h2>
+        <h2><strong>Instructor: </strong>{{ instructor }}</h2>
+        <form id="classRegForm" method="post" action="/students/classes/register"> --}}
+            <input type="text" name="student_id" value="{{student._id}}">
+            <input type="hidden" name="class_id" value="{{_id}}">
+            <input type="hidden" name="class_title" value="{{title}}">
+            <button type="submit" name="submit">Register For This Course</button>
+        </form>
+        <a href="/classes/{{_id}}/details">Details</a><hr>
+        {{/each}}
+    </div>
+</div>

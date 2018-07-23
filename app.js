@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -15,11 +16,13 @@ mongoose.connect('mongodb://127.0.0.1/schoolinfo', {
     useMongoClient: true
 });
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log('The connection was successful!');
-});
+// assign mongoose promise library and connect to database
+mongoose.Promise = global.Promise;
+const URL = process.env.MONGODB_URI_PROD || process.env.MONGODB_URI_DEV;
+// const URL = process.env.MONGODB_URI_DEV;
+mongoose.connect(URL, { useNewUrlParser: true })
+  .then(() => console.log(`Database connected`))
+  .catch(err => console.log(`Database connection error: ${err.message}`));
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -104,4 +107,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
+app.listen( process.env.PORT || 8000, () => {
+    console.log('Server started on port', process.env.PORT);
+});
 module.exports = app;
