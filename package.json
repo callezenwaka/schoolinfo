@@ -26,7 +26,7 @@
         "mongodb": "^3.1.1",
         "mongoose": "^5.2.5",
         "morgan": "~1.9.0",
-        "npm": "^6.2.0",
+        "npm": "^6.13.4",
         "serve-favicon": "~2.4.5",
         "utils": "^0.3.1",
         "utils-merge": "^1.0.1"
